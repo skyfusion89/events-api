@@ -1,24 +1,81 @@
-# README
+# Event API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails API storing data from a JSON object
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+* Ruby. Install it with [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io). Check [.ruby-verion](.ruby-version) for the required version.
 
-* System dependencies
+## Getting Started
 
-* Configuration
+This guide outlines the steps needed to start events-api.
 
-* Database creation
+### Basic System Setup
 
-* Database initialization
+For the `events-api` repository on GitHub under your username. You'll end up with something like `your_user_name/events-api`.
 
-* How to run the test suite
+Clone the forked repository to your development machine:
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+git clone git@github.com:your_user_name/event-api.git
+```
 
-* Deployment instructions
+and add a git remote with the git URL of the main repository:
 
-* ...
+```sh
+git remote add upstream git@github.com:skyfusion89/event-api.git
+```
+
+Finally, install the Ruby version as used by the application. This information is defined in `.ruby-version` file at the root of the repository.git
+
+### Application Setup
+
+Execute the following steps.
+
+#### Install the GEM dependencies
+
+```sh
+gem install bundler
+bundle install
+```
+
+#### Setup Database
+
+```sh
+bundle exec rake db:create db:migrate
+```
+
+#### Generate Access Token
+
+```sh
+bundle exec rake auth:generate_access_token['<CUSTOM_CLIENT_ID>']
+```
+it should produce:
+```sh
+Your App Access ID is: TestApp
+Your App Token is: MkAh2d8wOtLc/Uh3vwiUyr5UquPSYrlGLoO/Ercr6eoe1vim/rrc3Dqx/r9vf0QUZvn1iOU6hhrsof/hwyt6Hg==
+```
+
+*CUSTOM_CLIENT_ID - custom string of your choice
+
+### Start the delayed_job Workers
+
+```sh
+bundle exec rake jobs:work
+```
+
+### Start the Application
+
+```sh
+bundle exec rails s
+```
+
+Now you can hit http://localhost:3000 in your favourite browser!
+
+## Running the EventApp Tests
+
+To run the RSpec tests:
+
+```sh
+bundle exec rspec
+```
