@@ -1,0 +1,18 @@
+POST http://localhost:3010/events HTTP/1.1
+content-type: application/json
+ClientId: TestApp
+Authorization: Token lILwgtVYFXQvDAASkqKsXQ3pYSlW2ACh4RElPergZsuXO/w7IXYxAwDUQSRLfAgU/HK+4uv17+qJu7w3FROGTQ==
+
+{
+	"customer_id": "1",
+	"event_code": "4",
+	"event_id": "1231235",
+	"timestamp": "1652776617",
+	"properties": {
+		"custom_property": "foobar",
+		"other_property": "foobar"
+	}
+}
+
+#Your App Access ID is: TestApp
+#Your App Token is: lILwgtVYFXQvDAASkqKsXQ3pYSlW2ACh4RElPergZsuXO/w7IXYxAwDUQSRLfAgU/HK+4uv17+qJu7w3FROGTQ==
