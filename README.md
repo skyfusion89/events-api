@@ -79,3 +79,25 @@ To run the RSpec tests:
 ```sh
 bundle exec rspec
 ```
+
+## Test POST /events
+
+```sh
+POST http://localhost:3000/events HTTP/1.1
+content-type: application/json
+ClientId: <CUSTOM_CLIENT_ID>
+Authorization: Token <TOKEN>
+
+{
+	"event": {
+		"customer_id": "5",
+		"event_code": "5",
+		"event_id": "7",
+		"timestamp": "2022-05-18 13:13:40 +0300",
+		"property_attributes": {
+			"custom_property": "foobar",
+			"other_property": "foobar"
+		}
+	}
+}
+```
