@@ -72,7 +72,7 @@ bundle exec rails s
 
 Now you can hit http://localhost:3000 in your favourite browser!
 
-## Running the EventApp Tests
+## Running the event-api Tests
 
 To run the RSpec tests:
 

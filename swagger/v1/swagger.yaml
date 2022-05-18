@@ -1,0 +1,44 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/events":
+    post:
+      summary: Create Event
+      tags:
+      - Events
+      parameters: []
+      responses:
+        '201':
+          description: created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customer_id:
+                  type: string
+                event_code:
+                  type: string
+                event_id:
+                  type: string
+                timestamp:
+                  type: date
+                property_attributes:
+                  type: object
+                  properties:
+                    custom_property:
+                      type: string
+                    other_property:
+                      type: string
+              required:
+              - event
+              - customer_id
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000

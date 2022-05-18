@@ -27,10 +27,13 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'delayed_job_active_record'
 gem 'daemons'
+gem 'rswag-api'
+gem 'rswag-ui'
 
 group :development, :test do
   gem 'shoulda-matchers', '~> 4.5.0', source: 'https://rubygems.org/'
   gem 'rspec-rails'
+  gem 'rswag-specs'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
